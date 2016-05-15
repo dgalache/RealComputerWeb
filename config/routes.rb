@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :empregadores
   resources :clientes
   resources :cargos
   root to: 'visitors#index'
