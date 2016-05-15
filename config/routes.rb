@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :empregados
   resources :empregadores
   resources :clientes
   resources :cargos
