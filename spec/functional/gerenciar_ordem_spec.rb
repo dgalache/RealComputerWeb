@@ -32,7 +32,7 @@ feature 'gerenciar ordem' do
 	end
 	scenario 'excluir ordem' do #, :js => true do
 		ordem = FactoryGirl.create(:ordem, cliente: @nome, empregado: @nome)
-		visit ordems_path
+		visit ordens_path
 		click_link("Destroy")
 	end
 	def preencher(dados)
