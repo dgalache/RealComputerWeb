@@ -1,16 +1,21 @@
-= simple_form_for(@ordem) do |f|
-  = f.error_notification
-
-  .form-inputs
-    = f.input :equipamento
-    = f.input :defeito
-    = f.input :marca
-    = f.input :descricao
-    = f.input :string
-    = f.input :status
-    = f.input :valor
-    = f.association :cliente
-    = f.association :empregado
-
-  .form-actions
-    = f.submit "Salvar"
+= simple_form_for @ordem, :html => { :class => 'form-horizontal' } do |f|
+  = f.input :equipamento
+  = f.error_span :equipamento
+  = f.input :defeito
+  = f.error_span :defeito
+  = f.input :marca
+  = f.error_span :marca
+  = f.input :descricao
+  = f.error_span :descricao
+  = f.input :string
+  = f.error_span :string
+  = f.input :status
+  = f.error_span :status
+  = f.input :valor
+  = f.error_span :valor
+  = f.input :cliente_id
+  = f.error_span :cliente_id
+  = f.input :empregado_id
+  = f.error_span :empregado_id
+  = f.button :submit, :class => 'btn-primary'
+  = link_to t('.cancel', :default => t("helpers.links.cancel")), ordens_path, :class => 'btn btn-default'

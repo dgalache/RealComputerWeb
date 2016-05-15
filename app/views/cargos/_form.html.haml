@@ -1,9 +1,7 @@
-= simple_form_for(@cargo) do |f|
-  = f.error_notification
-
-  .form-inputs
-    = f.input :tipo
-    = f.input :salario
-
-  .form-actions
-    = f.submit "Salvar"
+= simple_form_for @cargo, :html => { :class => 'form-horizontal' } do |f|
+  = f.input :tipo
+  = f.error_span :tipo
+  = f.input :salario
+  = f.error_span :salario
+  = f.button :submit, :class => 'btn-primary'
+  = link_to t('.cancel', :default => t("helpers.links.cancel")), cargos_path, :class => 'btn btn-default'

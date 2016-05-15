@@ -12,7 +12,7 @@ gem 'turbolinks'
 gem 'jbuilder'
 
 
-#gem 'twitter-bootstrap-rails'
+gem 'twitter-bootstrap-rails'
 gem 'bootstrap-sass', '~> 3.3.5'
 gem 'haml-rails'
 gem 'high_voltage'

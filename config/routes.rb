@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
+
+  root to: 'visitors#index'
   resources :ordens
   resources :empregados
   resources :empregadores
   resources :clientes
   resources :cargos
-  root to: 'visitors#index'
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

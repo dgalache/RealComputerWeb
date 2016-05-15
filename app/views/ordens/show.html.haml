@@ -1,33 +1,45 @@
-%p#notice= notice
+- model_class = Ordem
+.page-header
+  %h1=t '.title', :default => model_class.model_name.human.titleize
 
 %p
-  %b Equipamento:
+  %strong= model_class.human_attribute_name(:equipamento) + ':'
+  %br
   = @ordem.equipamento
 %p
-  %b Defeito:
+  %strong= model_class.human_attribute_name(:defeito) + ':'
+  %br
   = @ordem.defeito
 %p
-  %b Marca:
+  %strong= model_class.human_attribute_name(:marca) + ':'
+  %br
   = @ordem.marca
 %p
-  %b Descricao:
+  %strong= model_class.human_attribute_name(:descricao) + ':'
+  %br
   = @ordem.descricao
 %p
-  %b String:
+  %strong= model_class.human_attribute_name(:string) + ':'
+  %br
   = @ordem.string
 %p
-  %b Status:
+  %strong= model_class.human_attribute_name(:status) + ':'
+  %br
   = @ordem.status
 %p
-  %b Valor:
+  %strong= model_class.human_attribute_name(:valor) + ':'
+  %br
   = @ordem.valor
 %p
-  %b Cliente:
-  = @ordem.cliente
+  %strong= model_class.human_attribute_name(:cliente_id) + ':'
+  %br
+  = @ordem.cliente_id
 %p
-  %b Empregado:
-  = @ordem.empregado
+  %strong= model_class.human_attribute_name(:empregado_id) + ':'
+  %br
+  = @ordem.empregado_id
 
-= link_to 'Edit', edit_ordem_path(@ordem)
-\|
-= link_to 'Back', ordens_path
+
+= link_to t('.back', :default => t("helpers.links.back")), ordens_path, :class => 'btn btn-default'
+= link_to t('.edit', :default => t("helpers.links.edit")), edit_ordem_path(@ordem), :class => 'btn btn-default'
+= link_to t('.destroy', :default => t("helpers.links.destroy")), ordem_path(@ordem), :method => "delete", :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-danger'
