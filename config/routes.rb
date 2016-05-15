@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :clientes
   resources :cargos
   root to: 'visitors#index'
   # The priority is based upon order of creation: first created -> highest priority.
